@@ -1,4 +1,99 @@
-# Codex Usage Monitor
+# Ida Windows Usage Widget MVP
+
+Ida is a Windows-first Tauri desktop widget for monitoring local Codex usage.
+It keeps the existing `local/` Codex Limits prototype intact while new product
+code lives in the Ida workspace:
+
+```text
+apps/desktop/            Tauri v2 + React widget/settings app
+apps/desktop/src-tauri/  native Windows shell, commands, tray, notifications
+core/ida-core/           provider-neutral models, storage, config, runtime, alerts
+providers/codex/         Codex capture and parser implementation
+providers/claude/        placeholder only; no MVP implementation
+docs/                    PRD, architecture, research, smoke notes
+directives/              implementation work orders and status notes
+execution/               repeatable local smoke scripts
+tests/                   shared sanitized fixtures and future integration tests
+local/                   existing Codex Limits prototype/reference implementation
+.tmp/                    gitignored scratch space
+```
+
+`local/monitor.sh`, `local/dashboard.html`, `local/data.json`, and
+`local/history.json` remain prototype/reference files. Do not add new Ida
+product code to `local/`.
+
+## Ida Prerequisites
+
+- Windows 10/11 for the MVP desktop target.
+- Rust stable 1.82 or newer.
+- Node 24 LTS preferred, Node 22.12 or newer minimum.
+- pnpm 10.x. If `pnpm` is not on PATH, use Corepack:
+  `corepack prepare pnpm@10.20.0 --activate`, or prefix commands with
+  `corepack pnpm`.
+- Tauri v2 Windows prerequisites, including Microsoft Visual Studio Build Tools
+  with the MSVC C++ workload and WebView2.
+- Codex CLI installed and authenticated. Ida invokes local Codex status capture
+  and never handles OpenAI credentials.
+- WSL is optional, but required when using `native_then_wsl` fallback or
+  `wsl_only` capture mode on a setup where native Codex is unavailable.
+
+## Run Ida From Source
+
+Install dependencies:
+
+```powershell
+corepack pnpm install
+```
+
+Run the desktop app in development:
+
+```powershell
+pnpm --dir apps/desktop tauri dev
+```
+
+If `pnpm` is unavailable in this shell, use:
+
+```powershell
+corepack pnpm --dir apps/desktop tauri dev
+```
+
+Build a local Windows package:
+
+```powershell
+pnpm --dir apps/desktop tauri build
+```
+
+The MVP has no app account, cloud backend, license enforcement, payment
+processing, or auto-update flow. Future paid builds, if offered, are convenience
+packages for users who do not want to compile from source.
+
+## Ida Verification
+
+Run the full local smoke script:
+
+```powershell
+.\execution\smoke.ps1
+```
+
+Or run the checks directly:
+
+```powershell
+cargo check --workspace
+cargo test --workspace
+cargo clippy --workspace --all-targets -- -D warnings
+cargo fmt --all --check
+pnpm --dir apps/desktop typecheck
+pnpm --dir apps/desktop test
+pnpm --dir apps/desktop lint
+pnpm --dir apps/desktop format:check
+pnpm --dir apps/desktop tauri build
+```
+
+The commands above should not require secrets. Do not commit config files,
+Discord webhook URLs, API keys, raw terminal transcripts, snapshots, logs, build
+outputs, `target/`, `node_modules/`, or generated installers.
+
+# Codex Usage Monitor Prototype
 
 Track your OpenAI Codex CLI usage limits in real time locally, with optional external access. No cloud accounts required to get started.
 

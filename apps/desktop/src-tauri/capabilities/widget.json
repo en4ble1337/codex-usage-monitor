@@ -1,0 +1,16 @@
+{
+  "identifier": "ida-widget-capability",
+  "description": "Widget window permissions for Ida usage display.",
+  "windows": ["widget"],
+  "permissions": [
+    "core:default",
+    "core:event:default",
+    "core:window:allow-show",
+    "core:window:allow-hide",
+    "core:window:allow-set-focus",
+    "core:window:allow-start-dragging",
+    "core:window:allow-set-position",
+    "core:window:allow-set-size",
+    "core:window:allow-set-always-on-top"
+  ]
+}

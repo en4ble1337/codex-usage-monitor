@@ -1,0 +1,30 @@
+[workspace]
+members = [
+    "apps/desktop/src-tauri",
+    "core/ida-core",
+    "providers/codex",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+rust-version = "1.82"
+version = "0.1.0"
+
+[workspace.dependencies]
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+directories = "6"
+regex = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+specta = { version = "2.0.0-rc.24", features = ["chrono", "derive"] }
+specta-typescript = "0.0.11"
+tempfile = "3"
+thiserror = "2"
+tokio = { version = "1", features = ["macros", "process", "rt-multi-thread", "sync", "time"] }
+tracing = "0.1"
+url = "2"
+uuid = { version = "1", features = ["serde", "v4"] }

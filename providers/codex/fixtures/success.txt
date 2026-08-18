@@ -1,0 +1,4 @@
+Account: ida@example.invalid
+Model: GPT-5 Codex
+5h limit: 89% left (resets in 2h 14m)
+Weekly limit: 64% left (resets Monday 09:00)

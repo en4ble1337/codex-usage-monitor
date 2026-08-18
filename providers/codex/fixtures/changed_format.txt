@@ -1,0 +1,3 @@
+Codex quota panel
+Rolling bucket has plenty available.
+Long bucket has plenty available.

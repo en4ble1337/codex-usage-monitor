@@ -1,0 +1,12 @@
+{
+  "name": "ida-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "smoke": "pnpm --dir apps/desktop format:check && pnpm --dir apps/desktop lint && pnpm --dir apps/desktop typecheck && pnpm --dir apps/desktop test"
+  }
+}

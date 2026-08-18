@@ -21,3 +21,30 @@ Dockerfile
 docker-compose.yml
 docker-entrypoint.sh
 openclaw-webinfo/
+
+# Ida local app/config/state artifacts
+.tmp/
+*.local.json
+ida.local.*
+config.json
+widget-preferences.json
+alert-state.json
+latest.json
+history.ndjson
+*.log
+
+# pnpm / Vite
+pnpm-debug.log*
+apps/desktop/dist/
+apps/desktop/.vite/
+
+# Rust / Tauri build output
+target/
+apps/desktop/src-tauri/target/
+apps/desktop/src-tauri/gen/
+apps/desktop/src-tauri/.tauri/
+apps/desktop/src-tauri/bundle/
+apps/desktop/src-tauri/wix/
+apps/desktop/src-tauri/nsis/
+
+__pycache__/

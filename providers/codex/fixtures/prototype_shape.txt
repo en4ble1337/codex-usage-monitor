@@ -1,0 +1,3 @@
+| Account: ida@example.invalid |
+| 5h limit   42% left (resets 1h 02m) |
+| Weekly limit   12% left (resets Friday) |

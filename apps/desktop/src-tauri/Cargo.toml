@@ -1,0 +1,31 @@
+[package]
+name = "ida-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+name = "ida_desktop"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+async-trait.workspace = true
+chrono.workspace = true
+ida-codex = { path = "../../../providers/codex" }
+ida-core = { path = "../../../core/ida-core" }
+serde.workspace = true
+serde_json.workspace = true
+specta.workspace = true
+tauri = { version = "2.11.0", features = ["tray-icon", "image-png"] }
+tauri-plugin-notification = "2.3.3"
+tauri-plugin-opener = "2.5.4"
+tauri-plugin-single-instance = "2.4.2"
+tokio.workspace = true
+tracing.workspace = true
+
+[build-dependencies]
+tauri-build = { version = "2.5.1", features = [] }
+
+[dev-dependencies]
+tempfile.workspace = true

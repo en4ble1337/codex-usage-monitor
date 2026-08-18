@@ -1,0 +1,2 @@
+Codex is not signed in.
+Run codex and sign in to continue.

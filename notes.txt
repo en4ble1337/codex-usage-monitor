@@ -1,0 +1,1 @@
+So, okay, so Ida is going to be, we're going to extend that to both Claude and Codex. And we will want to do two things. We want to have like a widget for both Windows and Mac and Linux. And then eventually we will look into having this as an app on the phone as well to have widgets, both Android and Mac OS.

@@ -1,0 +1,1 @@
+{"root":["./src/commands.ts","./src/samplestate.ts","./src/settings.tsx","./src/widget.tsx","./src/__tests__/settingswindow.test.tsx","./src/__tests__/widgetwindow.test.tsx","./src/bindings/ida.ts","./src/components/limitrow.tsx","./src/windows/settingswindow.tsx","./src/windows/widgetwindow.tsx","./vite.config.ts","./vitest.setup.ts"],"version":"5.9.3"}

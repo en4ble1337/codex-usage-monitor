@@ -1,0 +1,14 @@
+{
+  "identifier": "ida-settings-capability",
+  "description": "Settings window permissions for Ida configuration.",
+  "windows": ["settings"],
+  "permissions": [
+    "core:default",
+    "core:event:default",
+    "core:window:allow-show",
+    "core:window:allow-hide",
+    "core:window:allow-set-focus",
+    "notification:default",
+    "opener:default"
+  ]
+}

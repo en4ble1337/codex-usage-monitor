@@ -1,0 +1,2 @@
+Account: ida@example.invalid
+Weekly limit: 64% left (resets Monday 09:00)
